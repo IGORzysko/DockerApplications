@@ -47,7 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-	<None Include="Dockerfile.txt" />
+    <None Include="Dockerfile.txt" />
+    <None Include="helper\BuildDockerImage.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
