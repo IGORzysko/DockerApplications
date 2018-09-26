@@ -1,0 +1,4 @@
+
+FROM microsoft/windowsservercore
+ADD publish/ /
+ENTRYPOINT ConsoleApp2.exe
