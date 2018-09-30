@@ -1,0 +1,4 @@
+﻿
+FROM microsoft/windowsservercore
+ADD publish/ /
+ENTRYPOINT NetStandardWebApplication1.exe

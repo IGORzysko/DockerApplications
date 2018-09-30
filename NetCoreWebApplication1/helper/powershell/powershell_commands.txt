@@ -1,0 +1,20 @@
+﻿
+--
+-- run net core web application directly, without docker
+--
+
+cd source\repos\DockerApplications\NetCoreWebApplication1
+dotnet run
+ctrl+c to stop
+
+--
+-- run net core web application within docker:
+--
+
+cd source\repos\DockerApplications\NetCoreWebApplication1
+docker ps
+docker rm --force net-core-web-application-1-container
+docker run -d --name net-core-web-application-1-container net-core-web-application-1
+docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" net-core-web-application-1-container
+go to the browser and type received container's IP address
+ctrl+c to stop
