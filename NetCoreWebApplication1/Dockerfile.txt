@@ -4,7 +4,7 @@ COPY . /NetCoreWebApplication1
 WORKDIR /NetCoreWebApplication1
 
 RUN dotnet restore
-RUN dotnet build
+RUN dotnet build NetCoreWebApplication1/NetCoreWebApplication1.csproj
 
 EXPOSE 5000/tcp
 ENV ASPNETCORE_URLS http://*:5000
