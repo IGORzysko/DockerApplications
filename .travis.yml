@@ -11,5 +11,4 @@ before_script:
  - dotnet restore
  
 script:
- # - dotnet build src/source/repos/DockerApplications/NetCoreWebApplication1/NetCoreWebApplication1/
  - dotnet build NetCoreWebApplication1/NetCoreWebApplication1.csproj
