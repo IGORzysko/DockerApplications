@@ -11,4 +11,5 @@ before_script:
  - dotnet restore
  
 script:
- - dotnet build NetCoreWebApplication1/NetCoreWebApplication1.csproj
+ - dotnet build NetCoreWebApplication1/NetCoreWebApplication1.csproj # .net core web application
+ - dotnet build ConsoleApp3/ConsoleApp3.csproj # .net core console application
