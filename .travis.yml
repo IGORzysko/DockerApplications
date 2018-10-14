@@ -17,7 +17,7 @@ before_install:
  - docker build -t net-core-web-application-1 . -f NetCoreWebApplication1/Dockerfile.txt
  - docker run -d -p 127.0.0.1:80:4567 net-core-web-application-1
  - docker ps -a
- - docker run net-core-web-application-1
+ #- docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" net-core-web-application-1-container
     
 script:
  - dotnet build NetCoreWebApplication1/NetCoreWebApplication1.csproj # .net core web application
