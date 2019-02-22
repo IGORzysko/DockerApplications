@@ -7,4 +7,4 @@ services:
        dockerfile: Dockerfile.txt
     image: net-core-web-application-1
     ports:
-      - 5001:80
+      - 5000:54745

@@ -1,3 +1,5 @@
 ﻿FROM microsoft/dotnet:latest
 COPY . /NetCoreWebApplication1
 WORKDIR /NetCoreWebApplication1
+
+ENTRYPOINT ["dotnet","run"]
