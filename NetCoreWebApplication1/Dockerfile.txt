@@ -2,4 +2,7 @@
 COPY . /NetCoreWebApplication1
 WORKDIR /NetCoreWebApplication1
 
+EXPOSE 54745
+ENV ASPNETCORE_URLS http://*:54745
+
 ENTRYPOINT ["dotnet","run"]

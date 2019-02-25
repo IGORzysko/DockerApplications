@@ -19,6 +19,7 @@ namespace NetCoreWebApplication1
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+				.UseUrls("http://*:54745")
                 .UseStartup<Startup>()
                 .Build();
     }
