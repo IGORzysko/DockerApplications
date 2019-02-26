@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  NetCoreWebApplication1:
+    build: 
+       context: ./NetCoreWebApplication1
+       dockerfile: Dockerfile.txt
+    image: net-core-web-application-1
+    ports:
+      - 5000:54745

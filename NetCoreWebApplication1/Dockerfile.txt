@@ -1,13 +1,8 @@
-﻿
-FROM microsoft/dotnet:latest
+﻿FROM microsoft/dotnet:latest
 COPY . /NetCoreWebApplication1
 WORKDIR /NetCoreWebApplication1
 
-RUN dotnet restore
-RUN dotnet build
+EXPOSE 54745
+ENV ASPNETCORE_URLS http://*:54745
 
-EXPOSE 5000/tcp
-ENV ASPNETCORE_URLS http://*:5000
-ENV ASPNETCORE_ENVIRONMENT docker
-
-ENTRYPOINT dotnet run
+ENTRYPOINT ["dotnet","run"]

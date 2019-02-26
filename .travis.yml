@@ -1,0 +1,24 @@
+language: csharp
+dist: trusty
+mono: none
+dotnet: 2.1.2
+branches:
+ - only:
+   - master
+   - develop
+ 
+before_script:
+ - dotnet restore
+
+services:
+ - docker
+
+before_install:
+ - docker build -t net-core-web-application-1 . -f NetCoreWebApplication1/Dockerfile.txt
+ - docker run -d -p 127.0.0.1:80:4567 net-core-web-application-1
+ - docker ps -a
+ #- docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" net-core-web-application-1-container
+    
+script:
+ - dotnet build NetCoreWebApplication1/NetCoreWebApplication1.csproj # .net core web application
+ - dotnet build ConsoleApp3/ConsoleApp3.csproj # .net core console application

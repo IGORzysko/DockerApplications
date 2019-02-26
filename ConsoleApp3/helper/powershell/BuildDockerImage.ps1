@@ -1,9 +1,10 @@
 ﻿$ImageName= "console-app-3"
-$ImagePath = "C:\Users\itra\source\repos\DockerApplications\ConsoleApp3\"
+$ImagePathHpEnvironment = "C:\Users\itra\source\repos\DockerApplications\ConsoleApp3\"
+#$ImagePathDellEnvironment = "C:\Users\igtr\source\repos\DockerApplications\ConsoleApp3\"
 
-function Invoke-Docker-Build ([string]$ImageName, [string]$ImagePath) {
+function Invoke-Docker-Build ([string]$ImageName, [string]$ImagePathHpEnvironment) {
 
-    Invoke-Expression "docker build -t $ImageName . -f $ImagePath\Dockerfile.txt"
+    Invoke-Expression "docker build -t $ImageName . -f $ImagePathHpEnvironment\Dockerfile.txt"
 }
 
 try {
@@ -11,7 +12,7 @@ try {
 	Write-Host "Creating the docker image..."
 	Write-Host ""
     Write-Progress -Activity "Creating the docker image..."
-    Invoke-Docker-Build -ImageName $ImageName -ImagePath $ImagePath
+    Invoke-Docker-Build -ImageName $ImageName -ImagePath $ImagePathHpEnvironment
     
     Write-Progress -Activity "Creating the docker image..." -Completed
     Write-Host "Docker image has been properly created and all operations have been performed properly." -ForegroundColor "Green"
